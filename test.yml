@@ -1,9 +1,16 @@
 ---
-  - hosts: localhost
-    tasks:
-       - debug: msg="Ansible is working!"
-       - debug: msg="Wsl for Ansible is also working"
-   - name: Set JAVA_HOME
+ - hosts: all
+   tasks:
+   - name: Package installation
+     dnf:
+       name:
+         - git
+         - MinGW
+         - PCLint
+         - Python36
+         - sonar-scanner-4.3.0.2102-windows
+       state: latest
+ - name: Set JAVA_HOME
      lineinfile:
        dest: /etc/environment
        state: present
