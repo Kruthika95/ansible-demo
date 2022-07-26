@@ -10,6 +10,7 @@
          - Python36
          - sonar-scanner-4.3.0.2102-windows
        state: latest
+       dest: C:\tools
  - name: Set JAVA_HOME
      lineinfile:
        dest: /etc/environment
